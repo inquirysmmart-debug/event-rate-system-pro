@@ -14,32 +14,47 @@ function App() {
   const [isAdmin, setIsAdmin] = useState(false);
 
   useEffect(() => {
-  const unsubscribe = onSnapshot(
-    doc(db, "rates", "latest"),
-    (snapshot) => {
-      if (snapshot.exists()) {
-        const data = snapshot.data().rates || [];
 
-        setRatesData(data);
+    // LocalStorage Backup
+    const local = localStorage.getItem("ratesData");
 
-        localStorage.setItem(
-          "ratesData",
-          JSON.stringify(data)
-        );
-
-        console.log("Realtime Updated");
-      }
-
-      setLoading(false);
-    },
-    (error) => {
-      console.error(error);
-      setLoading(false);
+    if (local) {
+      setRatesData(JSON.parse(local));
     }
-  );
 
-  return () => unsubscribe();
-}, []);
+    // Firebase Realtime
+    const unsubscribe = onSnapshot(
+      doc(db, "rates", "latest"),
+      (snapshot) => {
+
+        if (snapshot.exists()) {
+
+          const data = snapshot.data().rates || [];
+
+          setRatesData(data);
+
+          localStorage.setItem(
+            "ratesData",
+            JSON.stringify(data)
+          );
+
+          console.log("Realtime Updated");
+        }
+
+        setLoading(false);
+      },
+      (error) => {
+
+        console.error(error);
+
+        setLoading(false);
+
+      }
+    );
+
+    return () => unsubscribe();
+
+  }, []);
 
   if (loading) {
     return (
@@ -56,22 +71,33 @@ function App() {
       <Search ratesData={ratesData} />
 
       <div className="card">
+
         {!isAdmin ? (
+
           <button
             onClick={() => {
+
               const pass = prompt("Enter Admin Password");
 
               if (pass === "SMMART2026") {
+
                 setIsAdmin(true);
+
                 alert("Admin Login Successful");
+
               } else if (pass !== null) {
+
                 alert("Wrong Password");
+
               }
+
             }}
           >
             🔒 Admin Login
           </button>
+
         ) : (
+
           <>
             <h3>✅ Admin Mode</h3>
 
@@ -83,9 +109,13 @@ function App() {
             >
               Logout
             </button>
+
           </>
+
         )}
+
       </div>
+
     </>
   );
 }
