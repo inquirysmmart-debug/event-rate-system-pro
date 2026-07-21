@@ -1,0 +1,27 @@
+[
+  {
+    "degree": "101",
+    "design": "SAREE-101",
+    "rate": 416
+  },
+  {
+    "degree": "102",
+    "design": "SAREE-102",
+    "rate": 520
+  },
+  {
+    "degree": "103",
+    "design": "SAREE-103",
+    "rate": 890
+  },
+  {
+    "degree": "104",
+    "design": "SAREE-104",
+    "rate": 1250
+  },
+  {
+    "degree": "105",
+    "design": "SAREE-105",
+    "rate": 1525
+  }
+]

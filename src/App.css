@@ -1,0 +1,268 @@
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:Arial, Helvetica, sans-serif;
+}
+
+body{
+  background:#edf2f7;
+}
+
+.card{
+
+  width:700px;
+
+  margin:40px auto;
+
+  background:#fff;
+
+  padding:30px;
+
+  border-radius:15px;
+
+  box-shadow:0 10px 25px rgba(0,0,0,.15);
+
+}
+
+h1{
+
+  text-align:center;
+
+  color:#0d47a1;
+
+  margin-bottom:30px;
+
+}
+
+label{
+
+  display:block;
+
+  margin-top:15px;
+
+  font-weight:bold;
+
+}
+
+input{
+
+  width:100%;
+
+  padding:12px;
+
+  margin-top:5px;
+
+  border:1px solid #ccc;
+
+  border-radius:8px;
+
+  font-size:18px;
+
+}
+
+.btnRow{
+
+  display:flex;
+
+  gap:15px;
+
+  margin-top:25px;
+
+}
+
+button{
+
+  flex:1;
+
+  padding:15px;
+
+  border:none;
+
+  border-radius:10px;
+
+  font-size:18px;
+
+  cursor:pointer;
+
+  color:white;
+
+  font-weight:bold;
+
+}
+
+button:nth-child(1){
+
+  background:#d32f2f;
+
+}
+
+button:nth-child(2){
+
+  background:#2e7d32;
+
+}
+
+button:nth-child(3){
+
+  background:#616161;
+
+}
+
+.result{
+
+  margin-top:30px;
+
+  background:#f7f7f7;
+
+  padding:20px;
+
+  border-radius:10px;
+
+}
+
+.result p{
+
+  font-size:22px;
+
+  margin:10px 0;
+
+}.result h3{
+
+text-align:center;
+
+color:#0d47a1;
+
+margin-bottom:15px;
+
+}
+
+.result{
+
+background:#f8f9fa;
+
+padding:20px;
+
+border-radius:10px;
+
+margin-top:20px;
+
+border:2px solid #ddd;
+
+}.mapping{
+
+margin-top:30px;
+
+}
+
+.mapping h2{
+
+text-align:center;
+
+margin-bottom:20px;
+
+color:#0d47a1;
+
+}
+
+.mapping-grid{
+
+display:grid;
+
+grid-template-columns:repeat(5,1fr);
+
+gap:15px;
+
+}
+
+.box{
+
+padding:20px;
+
+border:2px solid #ccc;
+
+border-radius:12px;
+
+text-align:center;
+
+transition:.3s;
+
+background:white;
+
+}
+
+.box.active{
+
+background:#e53935;
+
+color:white;
+
+border-color:#e53935;
+
+font-weight:bold;
+
+transform:scale(1.05);
+
+}.summary{
+
+display:flex;
+
+gap:20px;
+
+margin-bottom:25px;
+
+}
+
+.summaryBox{
+
+flex:1;
+
+background:#0d47a1;
+
+color:white;
+
+padding:20px;
+
+border-radius:12px;
+
+text-align:center;
+
+}
+
+.summaryBox h4{
+
+margin-bottom:10px;
+
+font-size:18px;
+
+}
+
+.summaryBox h2{
+
+font-size:30px;
+
+}select{
+
+width:100%;
+
+padding:12px;
+
+margin-top:5px;
+
+font-size:18px;
+
+border-radius:8px;
+
+border:1px solid #ccc;
+
+}input[type=file]{
+
+padding:12px;
+
+border:2px dashed #1976d2;
+
+background:#f8f9fa;
+
+cursor:pointer;
+
+}
